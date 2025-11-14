@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DanKons - Layanan Konseling Profesional</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: black;
+      --hero-bg: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      --footer-bg: #343a40;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: white;
+      --hero-bg: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      --footer-bg: #1a1a1a;
+    }
+    body {
+      scroll-behavior: smooth;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .hero {
+      background: var(--hero-bg);
+      color: white;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .footer {
+      background-color: var(--footer-bg);
+      color: white;
+      padding: 20px 0;
+      transition: background-color 0.3s;
+    }
+    .card {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .form-control, .form-select, .form-label {
+      background-color: var(--bg-color) !important;
+      color: var(--text-color) !important;
+      border-color: var(--text-color) !important;
+    }
+    .form-control:focus, .form-select:focus {
+      background-color: var(--bg-color) !important;
+      color: var(--text-color) !important;
+      border-color: #0d6efd !important;
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+    }
+    [data-theme="dark"] .form-control, [data-theme="dark"] .form-select {
+      border-color: #666 !important;
+    }
+    [data-theme="dark"] .bg-light {
+      background-color: #333 !important;
+    }
+    [data-theme="dark"] ::placeholder {
+      color: #ccc !important;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .pricing-card {
+      position: relative;
+    }
+    .pricing-card .text-success {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .btn-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .navbar {
+      animation: fadeInDown 1s ease-out;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .navbar-nav .nav-link {
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">DanKons</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#konsultasi">Konsultasi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        <li class="nav-item">
+          <button class="btn-toggle" id="theme-toggle">🌙</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Layanan Konseling Online & Tatap Muka</h1>
+    <p class="lead">Tempat berbagi cerita, menemukan solusi, dan menenangkan hati.</p>
+    <a href="#konsultasi" class="btn btn-primary btn-lg">Mulai Konsultasi</a>
+  </div>
+</section>
+
+<!-- Layanan -->
+<section id="layanan" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Layanan Kami</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <a href="#konsultasi" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <i class="bi bi-people-fill fs-1 text-primary mb-2"></i>
+            <h5>Bimbingan Kelompok</h5>
+            <p>Bimbingan bersama untuk mengembangkan keterampilan sosial dan emosional.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#konsultasi" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <i class="bi bi-chat-dots-fill fs-1 text-success mb-2"></i>
+            <h5>Konseling Kelompok</h5>
+            <p>Sesi konseling bersama untuk membahas masalah serta mecari solusi bersama.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#konsultasi" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <i class="bi bi-book-fill fs-1 text-warning mb-2"></i>
+            <h5>Bimbingan Klasikal</h5>
+            <p>Bimbingan dalam kelas untuk pendidikan dan pengembangan diri.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#konsultasi" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <i class="bi bi-person-fill fs-1 text-info mb-2"></i>
+            <h5>Konseling Individu</h5>
+            <p>Bimbingan pribadi untuk membantu mengatasi masalah emosional dan mental.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Biaya Layanan</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="card shadow-sm p-3">
+          <i class="bi bi-people-fill fs-1 text-primary mb-2"></i>
+          <h5>Bimbingan Kelompok</h5>
+          <p class="text-success fw-bold">Gratis</p>
+          <p>Sesi bimbingan kelompok tanpa biaya.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm p-3">
+          <i class="bi bi-chat-dots-fill fs-1 text-success mb-2"></i>
+          <h5>Konseling Kelompok</h5>
+          <p>Rp 50.000 / sesi</p>
+          <p>Sesi konseling untuk kelompok kecil.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm p-3">
+          <i class="bi bi-book-fill fs-1 text-warning mb-2"></i>
+          <h5>Bimbingan Klasikal</h5>
+          <p>Rp 30.000 / sesi</p>
+          <p>Bimbingan dalam setting kelas.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm p-3">
+          <i class="bi bi-person-fill fs-1 text-info mb-2"></i>
+          <h5>Konseling Individu</h5>
+          <p>Rp 100.000 / sesi</p>
+          <p>Konseling pribadi intensif.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form Konsultasi -->
+<section id="konsultasi" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Form Konsultasi</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama anda">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email / Nomor WA</label>
+            <input type="text" class="form-control" id="email" placeholder="Masukkan email atau nomor WA">
+          </div>
+          <div class="mb-3">
+            <label for="jenis" class="form-label">Jenis Konseling</label>
+            <select class="form-select" id="jenis">
+              <option>Bimbingan Kelompok</option>
+              <option>Konseling Kelompok</option>
+              <option>Bimbingan Klasikal</option>
+              <option>Konseling Individu</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="masalah" class="form-label">Jenis Masalah</label>
+            <select class="form-select" id="masalah">
+              <option>Pribadi</option>
+              <option>Belajar</option>
+              <option>Sosial</option>
+              <option>Karir</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="pesan" class="form-label">Pesan / Permasalahan</label>
+            <textarea class="form-control" id="pesan" rows="4" placeholder="Tuliskan permasalahan anda"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Kirim</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tentang -->
+<section id="tentang" class="py-5">
+  <div class="container text-center">
+    <h2>Tentang Kami</h2>
+    <p class="mt-3">DanKons adalah platform layanan konseling yang membantu individu, keluarga, dan pelajar untuk memahami diri dan menemukan solusi dari berbagai permasalahan kehidupan.</p>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4>Visi</h4>
+        <p>Menjadi platform terdepan dalam layanan konseling yang membantu masyarakat mencapai kesejahteraan mental dan emosional melalui pendekatan profesional dan empati.</p>
+      </div>
+      <div class="col-md-6">
+        <h4>Misi</h4>
+        <ul class="text-start">
+          <li>Menyediakan layanan konseling profesional dan berkualitas tinggi.</li>
+          <li>Membangun kesadaran tentang pentingnya kesehatan mental di masyarakat.</li>
+          <li>Mendukung pengembangan diri individu, keluarga, dan remaja melalui bimbingan yang holistik.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+          <img src="photo_6102873233557228757_y.jpg" alt="Foto Konselor" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px;">
+          <h5>Muhammad Maulana Adani</h5>
+          <p>Konselor Profesional dengan pengalaman lebih dari 1000 tahun kalau tak sembahyang apa gunanya dalam membantu individu dan keluarga mengatasi masalah psikologis dan emosional. Spesialis dalam konseling individu, keluarga, dan remaja.</p>
+          <p><strong>Kualifikasi:</strong> S.Pd M.Pd Kons. (Bimbingan dan Konseling)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-0">© 2025 DanKons | Dibuat dengan hati 
+      ❤️</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      themeToggle.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
+  // Form submission to WhatsApp
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    const jenis = document.getElementById('jenis').value;
+    const masalah = document.getElementById('masalah').value;
+    const pesan = document.getElementById('pesan').value;
+
+    const message = `Halo, saya ${nama}. Email/WA: ${email}. Saya ingin konsultasi jenis: ${jenis}, masalah: ${masalah}. Pesan: ${pesan}.`;
+    const whatsappUrl = `https://wa.me/62895358551087?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  });
+</script>
+</body>
+</html>
